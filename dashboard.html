@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bond Dashboard</title>
+  <link rel="stylesheet" href="css\style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Bond Dashboard</h1>
+      <button id="logout-btn" class="btn-secondary">Logout</button>
+    </header>
+
+    <!-- Bond Info -->
+    <section id="bondInfo" class="box"></section>
+
+    <!-- Points Display -->
+    <section class="points box">
+      <h2>Points</h2>
+      <p><strong>You:</strong> <span id="userPoints">100</span></p>
+      <p><strong>Partner:</strong> <span id="partnerPoints">100</span></p>
+    </section>
+
+    <!-- Bond Level / Progress -->
+    <section class="box">
+      <h2>Bond Level</h2>
+      <div class="progress-container">
+        <p>You:</p>
+        <div class="progress-bar">
+          <div id="userProgress" class="progress-fill"></div>
+        </div>
+        <p>Partner:</p>
+        <div class="progress-bar">
+          <div id="partnerProgress" class="progress-fill"></div>
+        </div>
+      </div>
+      <p>Level: <span id="bondLevel">1</span></p>
+    </section>
+
+    <!-- Interaction Form -->
+    <section class="box">
+      <h2>Interaction</h2>
+      <form id="interactionForm">
+        <label for="incident">What happened?</label>
+        <input type="text" id="incident" placeholder="Describe incident..." required>
+
+        <label for="person">Who was responsible?</label>
+        <select id="person" required>
+          <option value="you">You</option>
+          <option value="partner">Partner</option>
+        </select>
+
+        <label for="damage">Type of Damage</label>
+        <select id="damage" required>
+          <option value="emotional">Emotional</option>
+          <option value="mental">Mental</option>
+          <option value="trust">Trust</option>
+          <option value="time">Time</option>
+        </select>
+
+        <button type="submit">Apply Changes</button>
+      </form>
+    </section>
+
+    <!-- Transaction History -->
+    <section class="box">
+      <h2>Transaction History</h2>
+      <div id="history">
+        <p>No history yet.</p>
+      </div>
+    </section>
+
+    <!-- Rewards Section -->
+    <section class="box">
+      <h2>Rewards</h2>
+      <div class="list-item">☕ Coffee Date — 200 pts</div>
+      <div class="list-item">🍿 Movie Night — 500 pts</div>
+      <div class="list-item">🌹 Romantic Dinner — 1000 pts</div>
+    </section>
+  </div>
+
+  <script src="js\app.js"></script>
+</body>
+</html>

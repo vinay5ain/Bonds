@@ -1,0 +1,830 @@
+/* ====== Global Reset ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* ====== Container (card style) ====== */
+.container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 18px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ====== Headings ====== */
+h1, h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* ====== Forms ====== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+label {
+  text-align: left;
+  font-weight: bold;
+  color: #444;
+  font-size: 14px;
+}
+
+input, select, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+}
+
+/* ====== Buttons ====== */
+button {
+  padding: 12px;
+  border: none;
+  background: #2575fc;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #1b5ed7;
+}
+
+/* ====== Links ====== */
+p {
+  margin-top: 15px;
+  color: #555;
+  font-size: 14px;
+}
+
+a {
+  color: #2575fc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ====== Transaction / Rewards Section (future pages) ====== */
+.section {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.section h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.list {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.list-item {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background: #ddd;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: #4caf50;
+  border-radius: 10px 0 0 10px;
+  transition: width 0.5s ease;
+}
+.progress-text {
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+/* ====== Responsive Design ====== */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+@media (max-width: 320px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+}
+
+/* ====== Additional Utility Classes ====== */
+.text-center {
+  text-align: center;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.hidden {
+  display: none;
+}
+.visible {
+  display: block;
+}
+.flex {
+  display: flex;
+  gap: 10px;
+}
+.flex-column {
+  flex-direction: column;
+}
+.justify-center {
+  justify-content: center;
+}
+.align-center {
+  align-items: center;
+}
+.w-100 {
+  width: 100%;
+}
+.w-auto {
+  width: auto;
+}
+.h-100 {
+  height: 100%;
+}
+.h-auto {
+  height: auto;
+}
+
+/* ====== Error and Success Messages ====== */
+.message {
+
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-top: 10px;
+    }
+.message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    }
+.message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    }
+/* ====== Footer ====== */
+footer {
+  margin-top: 30px;
+  font-size: 12px;
+  color: #aaa;
+}
+footer a {
+  color: #aaa;
+}
+footer a:hover {
+  color: #fff;
+}
+/* ====== Animations ====== */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+    }
+.slide-in {
+    animation: slideIn 0.5s ease-in-out;
+    }
+@keyframes slideOut {
+    from { opacity: 1; transform: translateX(0); }
+    to { opacity: 0; transform: translateX(20px); }
+    }
+.slide-out {
+    animation: slideOut 0.5s ease-in-out;
+    }
+/* ====== Tooltips ====== */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position above the element */
+  left: 50%;
+  margin-left: -60px; /* Center the tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+/* ====== Dark Mode Support ====== */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #1e1e1e, #3a3a3a);
+    }
+    .container {
+        background: #2c2c2c;
+        box-shadow: 0px 6px 18px rgba(0,0,0,0.7);
+    }
+    h1, h2, label, p {
+        color: #ddd;
+    }
+    input, select, textarea {
+        background: #444;
+        border: 1px solid #666;
+        color: #eee;
+    }
+    input:focus, select:focus, textarea:focus {
+        border-color: #2575fc;
+        box-shadow: 0 0 5px rgba(37, 117, 252, 0.7);
+    }
+    button {
+        background: #2575fc;
+        color: #fff;
+    }
+    button:hover {
+        background: #1b5ed7;
+    }
+    .list {
+        background: #3a3a3a;
+        border: 1px solid #555;
+    }
+    .list-item {
+        border-bottom: 1px solid #555;
+        color: #ccc;
+    }
+    footer {
+        color: #666;
+    }
+    footer a {
+        color: #666;
+    }
+    footer a:hover {
+        color: #fff;
+    }
+    }
+/* ====== Accessibility Enhancements ====== */
+:focus {
+  outline: 2px solid #2575fc;
+  outline-offset: 2px;
+}
+.high-contrast {
+  background: #000 !important;
+  color: #fff !important;
+}
+.high-contrast a {
+  color: #0ff !important;
+}
+.high-contrast button {
+  background: #0ff !important;
+  color: #000 !important;
+}
+.high-contrast button:hover {
+  background: #0cc !important;
+}
+.high-contrast input, .high-contrast select, .high-contrast textarea {
+  background: #000 !important;
+  color: #fff !important;
+  border: 1px solid #fff !important;
+}
+.high-contrast input:focus, .high-contrast select:focus, .high-contrast textarea:focus {
+  border-color: #0ff !important;
+  box-shadow: 0 0 5px rgba(0, 255, 255, 0.7) !important;
+}
+/* ====== Loading Spinner ====== */
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #2575fc;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: auto;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* ====== Modal ====== */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.5); 
+}
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; 
+  max-width: 500px;
+  border-radius: 10px;
+  position: relative;
+}
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal.show {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+/* ====== Notification Banner ====== */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #2575fc;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+    z-index: 1001;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+.notification.show {
+    opacity: 1;
+    transform: translateY(0);
+    }
+.notification.success {
+    background: #4caf50;
+    }
+.notification.error {
+    background: #f44336;
+    }
+.notification.info {
+    background: #2196f3;
+    }
+.notification .close-btn {
+    margin-left: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    }
+/* ====== Card Component ====== */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 6px 18px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin: 20px 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 12px 24px rgba(0,0,0,0.2);
+}
+.card h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+.card p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.card .card-footer {
+  margin-top: 15px;
+  text-align: right;
+}
+.card .card-footer button {
+  padding: 8px 12px;
+  font-size: 14px;
+}
+/* ====== Table Styles ====== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+th {
+  background: #f4f4f4;
+  color: #333;
+}
+tr:nth-child(even) {
+  background: #f9f9f9;
+}
+tr:hover {
+  background: #f1f1f1;
+}
+/* ====== Pagination ====== */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 5px;
+}
+.pagination button {
+  padding: 8px 12px;
+  border: none;
+  background: #2575fc;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.pagination button:hover {
+  background: #1b5ed7;
+}
+.pagination button.disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* ====== Form Validation Styles ====== */
+input.invalid, select.invalid, textarea.invalid {
+  border-color: #f44336;
+  background: #ffe6e6;
+}
+input.valid, select.valid, textarea.valid {
+  border-color: #4caf50;
+  background: #e6ffe6;
+}
+.validation-message {
+  font-size: 12px;
+  color: #f44336;
+  margin-top: 5px;
+}
+.validation-message.valid {
+  color: #4caf50;
+}
+/* ====== File Upload Styles ====== */
+.file-upload {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    }
+.file-upload:hover {
+    border-color: #2575fc;
+    }
+.file-upload input {
+    display: none;
+    }
+.file-upload p {
+    margin: 0;
+    color: #555;
+    }
+.file-upload .file-name {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+    }
+/* ====== Stepper Component ====== */
+.stepper {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+.step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+.step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  right: -50%;
+  width: 100%;
+  height: 2px;
+  background: #ccc;
+  z-index: -1;
+}
+.step.active:not(:last-child)::after {
+  background: #2575fc;
+}
+.step .step-number {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+  background: #ccc;
+  color: #fff;
+  margin: 0 auto 10px;
+}
+.step.active .step-number {
+  background: #2575fc;
+}
+.step.completed .step-number {
+  background: #4caf50;
+}
+.step .step-label {
+  font-size: 14px;
+  color: #555;
+}
+.step.active .step-label, .step.completed .step-label {
+  color: #333;
+}
+/* ====== Accordion Component ====== */
+.accordion {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+.accordion-item {
+  border-bottom: 1px solid #ddd;
+}
+.accordion-item:last-child {
+  border-bottom: none;
+}
+.accordion-header {
+  background: #f4f4f4;
+  padding: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.accordion-header:hover {
+  background: #e9e9e9;
+}
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: #fff;
+  padding: 0 15px;
+}
+.accordion-content p {
+  padding: 15px 0;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.accordion-item.active .accordion-content {
+  max-height: 200px; /* Adjust based on content */
+}
+.accordion-item .arrow {
+  transition: transform 0.3s ease;
+}
+.accordion-item.active .arrow {
+  transform: rotate(90deg);
+}
+/* ====== Chat Bubble Component ====== */
+.chat-container {
+  max-width: 600px;
+  margin: 20px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 6px 18px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+.chat-bubble {
+  max-width: 70%;
+  padding: 10px 15px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  position: relative;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.chat-bubble.user {
+  background: #2575fc;
+  color: #fff;
+  align-self: flex-end;
+  border-bottom-right-radius: 0;
+}
+.chat-bubble.bot {
+  background: #f1f1f1;
+  color: #333;
+  align-self: flex-start;
+  border-bottom-left-radius: 0;
+}
+.chat-bubble::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+.chat-bubble.user::after {
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent #2575fc;
+  right: -10px;
+  top: 10px;
+}
+.chat-bubble.bot::after {
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #f1f1f1 transparent transparent;
+  left: -10px;
+  top: 10px;
+}
+.chat-input {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+  font-size: 14px;
+}
+.chat-input button {
+  padding: 10px 15px;
+  border: none;
+  background: #2575fc;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.chat-input button:hover {
+  background: #1b5ed7;
+}
+/* ====== Calendar Component ====== */
+.calendar {
+    max-width: 400px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 6px 18px rgba(0,0,0,0.1);
+    padding: 20px;
+    }
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    }
+.calendar-header button {       
+    border: none;
+    background: #2575fc;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    }
+.calendar-header button:hover {
+    background: #1b5ed7;
+    }
+.calendar-header h3 {
+    color: #333;
+    }
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    }
+.calendar-day {
+    text-align: center;
+    padding: 10px 0;
+    font-weight: bold;
+    color: #555;
+    }
+.calendar-date {
+    text-align: center;
+
+    padding: 10px 0;
+    border-radius: 50%; 
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    }
+.calendar-date:hover {
+    background: #f4f4f4;
+    }
+.calendar-date.selected {
+    background: #2575fc;
+    color: #fff;
+    }
+.calendar-date.other-month {
+    color: #ccc;
+    cursor: default;
+    }
+/* ====== Tooltip Enhancement ====== */
+.tooltip .tooltiptext {
+    width: 140px;
+    }
+.tooltip .tooltiptext::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+    }
+/* ====== Scrollbar Styles ====== */
+::-webkit-scrollbar {
+    width: 8px;
+    }
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+    }
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+    }
+::-webkit-scrollbar-thumb:hover {
+    background: #999;
+    }
+
+
+

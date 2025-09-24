@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Bond</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Create Your Bond</h1>
+
+    <form id="bondSetupForm">
+      <label for="userName">Your Name:</label>
+      <input type="text" id="userName" required>
+
+      <label for="partnerName">Partner's Name:</label>
+      <input type="text" id="partnerName" required>
+
+      <label for="bondType">Bond Type:</label>
+      <select id="bondType" required>
+        <option value="friendship">Friendship</option>
+        <option value="relationship">Relationship</option>
+        <option value="marriage">Marriage</option>
+      </select>
+
+      <label for="bondDuration">Bond Duration (days):</label>
+      <select id="bondDuration" required>
+        <option value="7">7 Days</option>
+        <option value="30">30 Days</option>
+        <option value="90">90 Days</option>
+      </select>
+
+      <label for="bondStartDate">Start Date:</label>
+      <input type="date" id="bondStartDate" required>
+
+      <label for="bondEndDate">End Date:</label>
+      <input type="date" id="bondEndDate" required>
+
+      <button type="button" id="startBondBtn">Start Bond</button>
+    </form>
+
+    <div id="bondSummary" class="box"></div>
+    <div id="bondInfo" class="box"></div>
+
+    <p><a href="/index.html">Back to Login</a></p>
+  </div>
+
+  <script src="js\app.js"></script>
+</body>
+</html>
